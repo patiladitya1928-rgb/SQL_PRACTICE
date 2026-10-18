@@ -2,10 +2,10 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;
 \red255\green255\blue255;\red78\green112\blue88;\red255\green255\blue255;\red0\green0\blue0;\red103\green107\blue114;
-\red19\green20\blue21;}
+\red19\green20\blue21;\red103\green107\blue114;}
 {\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99971;\cssrgb\c0\c1\c1;
 \cssrgb\c100000\c100000\c99971;\cssrgb\c37388\c50864\c41817;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c1\c1;\csgenericrgb\c40392\c41961\c44706;
-\csgenericrgb\c7451\c7843\c8235;}
+\csgenericrgb\c7451\c7843\c8235;\cssrgb\c48058\c49711\c52218;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh17100\viewkind0
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
@@ -144,4 +144,23 @@ Only one valid answer exists.\
 #         for j in range(i+1,len(nums)):\
 #             if nums[i]+nums[j] == target:\
 #                 return [i,j]\cf9 \cb10 \
+\
+\
+\cf11 \cb7 Day : 5\
+\cf4 \cb5 \
+387. First Unique Character in a String\
+	 Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.\
+\
+\
+class Solution:\
+    def firstUniqChar(self, s: str) -> int:\
+        for i in range(len(s)):\
+            count = 0\
+            for j in range(len(s)):\
+                if s[i] == s[j]:\
+                    count += 1\
+            if count == 1:\
+                return i\
+        \
+        return -1\cf9 \cb10 \
 }
