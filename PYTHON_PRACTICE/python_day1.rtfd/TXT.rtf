@@ -1,11 +1,9 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2907
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;
-\red255\green255\blue255;\red78\green112\blue88;\red255\green255\blue255;\red0\green0\blue0;\red103\green107\blue114;
-\red19\green20\blue21;\red103\green107\blue114;}
-{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99971;\cssrgb\c0\c1\c1;
-\cssrgb\c100000\c100000\c99971;\cssrgb\c37388\c50864\c41817;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c1\c1;\csgenericrgb\c40392\c41961\c44706;
-\csgenericrgb\c7451\c7843\c8235;\cssrgb\c48058\c49711\c52218;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red78\green112\blue88;
+\red255\green255\blue255;\red103\green107\blue114;\red19\green20\blue21;\red103\green107\blue114;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99971;\cssrgb\c37388\c50864\c41817;
+\cssrgb\c100000\c100000\c100000;\csgenericrgb\c40392\c41961\c44706;\csgenericrgb\c7451\c7843\c8235;\cssrgb\c48058\c49711\c52218;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh17100\viewkind0
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
@@ -113,7 +111,7 @@ Day : 4\
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f1\i \cf4 \cb5 '''You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\
+\f1\i \cf2 \cb3 '''You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\
 You may assume that each input would have exactly one solution, and you may not use the same element twice.\
 You can return the answer in any order.\
  Example 1:\
@@ -135,19 +133,20 @@ Constraints:\
 Only one valid answer exists.\
 \
 \
- '''\cf6 \cb7 \
+ '''\cf4 \cb5 \
 \
-\cf4 \cb5 \
+\cf2 \cb3 \
 
-\f0\i0 \cf8 \cb7 # def twoSum( nums: list[int], target: int) -> list[int]:\
+\f0\i0 \cf2 \cb5 # def twoSum( nums: list[int], target: int) -> list[int]:\
 #     for i in range(len(nums)):\
 #         for j in range(i+1,len(nums)):\
 #             if nums[i]+nums[j] == target:\
-#                 return [i,j]\cf9 \cb10 \
+#                 return [i,j]\cf6 \cb7 \
 \
 \
-\cf11 \cb7 Day : 5\
-\cf4 \cb5 \
+\cf8 \cb5 Day : 5\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 \
 387. First Unique Character in a String\
 	 Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.\
 \
@@ -162,5 +161,22 @@ class Solution:\
             if count == 1:\
                 return i\
         \
-        return -1\cf9 \cb10 \
+        return -1\
+\
+\
+\
+242. Valid Anagram\
+\
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.\
+\
+class Solution:\
+    def isAnagram(self, s: str, t: str) -> bool:\
+        if len(s) != len(t):\
+            return False\
+\
+        for ch in s:\
+            if s.count(ch) != t.count(ch):\
+                return False\
+\
+        return True\cf6 \cb7 \
 }
