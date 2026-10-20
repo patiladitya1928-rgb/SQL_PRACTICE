@@ -1,11 +1,11 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2907
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red78\green112\blue88;
-\red255\green255\blue255;\red103\green107\blue114;\red19\green20\blue21;\red103\green107\blue114;\red0\green0\blue0;
-\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99971;\cssrgb\c37388\c50864\c41817;
-\cssrgb\c100000\c100000\c100000;\csgenericrgb\c40392\c41961\c44706;\csgenericrgb\c7451\c7843\c8235;\cssrgb\c48058\c49711\c52218;\cssrgb\c0\c1\c1;
-\cssrgb\c100000\c100000\c99971;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;
+\red255\green255\blue255;\red78\green112\blue88;\red103\green107\blue114;\red19\green20\blue21;\red103\green107\blue114;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99971;\cssrgb\c0\c1\c1;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c37388\c50864\c41817;\csgenericrgb\c40392\c41961\c44706;\csgenericrgb\c7451\c7843\c8235;\cssrgb\c48058\c49711\c52218;
+}
 \paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh15880\viewkind0
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
@@ -95,7 +95,7 @@ class Solution:\
         if numRows==1. and numRows >= len(s):\
             return s\
 \
-        row = [""] * numRows\
+\cf4 \cb5         row = [""] * numRows\
         r = 0\
         d = 1\
         for ch in s:\
@@ -105,7 +105,7 @@ class Solution:\
             elif r == numRows -1:\
                 d = -1\
             r+=d\
-        return "".join(row)\
+        return "".join(row)\cf2 \cb3 \
 \
 \
 Day : 4\
@@ -113,7 +113,7 @@ Day : 4\
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f1\i \cf2 \cb3 '''You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\
+\f1\i \cf2 '''You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\
 You may assume that each input would have exactly one solution, and you may not use the same element twice.\
 You can return the answer in any order.\
  Example 1:\
@@ -135,18 +135,18 @@ Constraints:\
 Only one valid answer exists.\
 \
 \
- '''\cf4 \cb5 \
+ '''\cf6 \cb5 \
 \
 \cf2 \cb3 \
 
-\f0\i0 \cf2 \cb5 # def twoSum( nums: list[int], target: int) -> list[int]:\
+\f0\i0 \cb5 # def twoSum( nums: list[int], target: int) -> list[int]:\
 #     for i in range(len(nums)):\
 #         for j in range(i+1,len(nums)):\
 #             if nums[i]+nums[j] == target:\
-#                 return [i,j]\cf6 \cb7 \
+#                 return [i,j]\cf7 \cb8 \
 \
 \
-\cf8 \cb5 Day : 5\
+\cf9 \cb5 Day : 5\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 \cf2 \cb3 \
 387. First Unique Character in a String\
@@ -186,11 +186,8 @@ class Solution:\
 Day : 7\
 \
 121. Best Time to Buy and Sell Stock\
-\
 You are given an array prices where prices[i] is the price of a given stock on the ith day.\
-\
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\
-\
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.\
 \
 \
@@ -199,12 +196,11 @@ Example 1:\
 Input: prices = [7,1,5,3,6,4]\
 Output: 5\
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\
-Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\cf6 \cb7 \
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\cf7 \cb8 \
 \
 \
 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
-\cf9 \cb10 class Solution:\
+\cf2 \cb3 class Solution:\
     def maxProfit(self, prices: list[int]) -> int:\
         min = prices[0]\
         max = 0\
@@ -220,6 +216,20 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 \
 \
 \
+Day : 8\
 \
+53. Maximum Subarray\
+Given an integer array nums, find the subarray with the largest sum, and return its sum.\
+\
+class Solution:\
+    def maxSubArray(self, nums: list[int]) -> int:\
+        cursum = 0\
+        max_sum = nums[0]\
+        for i in nums:\
+            cursum += i\
+            max_sum = max(cursum,max_sum)\
+            if cursum<0:\
+                cursum = 0\
+        return max_sum\
 \
 }
