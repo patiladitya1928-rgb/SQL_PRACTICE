@@ -127,6 +127,31 @@ left join Transactions t on v.visit_id = t.visit_id\
 where t.transaction_id is null group by v.customer_id;\
 \
 \
+Day : 9 \
+\
++\'97\'97\'97\'97\'97\'97-\'97+\'97\'97\'97\'97-+\
+| Column Name.   | Type       |\
++\'97\'97\'97\'97\'97\'97-\'97+\'97\'97\'97-\'97+\
+| personId             | int             |\
+| lastName            | varchar    |\
+| firstName           | varchar     |\
++\'97\'97\'97\'97\'97\'97\'97+\'97\'97\'97\'97\'97+\
+\
++\'97\'97\'97\'97\'97\'97\'97+\'97\'97\'97\'97+\
+| Column Name   | Type    |\
++\'97\'97\'97\'97\'97\'97\'97+\'97\'97\'97\'97+\
+| addressId   	     | int          |\
+| personId    	     | int         |\
+| city                   | varchar |\
+| state       	     | varchar |\
++\'97\'97\'97\'97\'97\'97\'97+\'97\'97\'97\'97+\
+\
+Write a solution to report the first name, last name, city, and state of each person in the Person table. If the address of a personId is not present in the Address table, report null instead.\
+Return the result table in any order.\
+\
+Ans : select p.firstName,p.lastName,a.city,a.state from Person p left join Address a on p.personId=a.personId ;\
+\
+\
 \
 \
 \
