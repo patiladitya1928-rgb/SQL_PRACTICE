@@ -1,0 +1,18 @@
+Day07.txt
+
+SQL
+Problem: LeetCode 620 — Not Boring Movies
+
+Table: Cinema
+
+| Column      | Type    |
+|-------------|---------|
+| id          | INT     |
+| movie       | VARCHAR |
+| description | VARCHAR |
+| rating      | FLOAT   |
+
+Question:
+Find movies with odd IDs and descriptions that are not "boring". Return all columns, sorted by rating in descending order.
+
+Ans : select * from Cinema where id%2 <> 0 and description <> 'boring' order by rating desc;
